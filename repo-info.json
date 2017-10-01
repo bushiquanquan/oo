@@ -1,0 +1,16 @@
+{
+    "name": "circle",
+    "desc": "circle desc",
+    "type": "myself",
+    "group": "class theree",
+    "version": "1.2.0",
+    "offline": 1,
+    "author": {
+        "name": "yuanhuihui",
+        "email": "yuanhuihui"
+    },
+    "root": "./src",
+    "port": "8899",
+    "ssi": true,
+    "timestamp": 1500451125462
+}
