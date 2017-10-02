@@ -12,9 +12,11 @@
 <script>
     export default {
         data () {
+            let a = '';
+            console.log(a);
             return {
                 test: 'hello world1264'
-            }
+            };
         },
         beforeRouteEnter (to, from, next) {
             if (to.meta.canEnter) {
@@ -24,9 +26,10 @@
             }
         },
         methods: {
+
         },
         mounted () {
 
         }
-    }
+    };
 </script>

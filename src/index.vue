@@ -16,7 +16,7 @@
             ...mapGetters([
                 'account'
             ]),
-            //当映射的计算属性的名称与state 的子节点名称相同时，我们也可以给 mapState 传一个字符串数组 ...mapState(['userInfo'])
+            // 当映射的计算属性的名称与state 的子节点名称相同时，我们也可以给 mapState 传一个字符串数组 ...mapState(['userInfo'])
             ...mapState({
                 userInfo: state => state.userInfo
             })

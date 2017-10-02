@@ -22,6 +22,7 @@ for (let pathname in pages) {
         template: pages[pathname], // 模版路径
         chunks: [pathname, arr.join('/')], // 每个 html 引用的 js 模块
         inject: 'true',
+        title: '圈圈',
         env: {
             APP_ENV: utils.APP_ENV
         }

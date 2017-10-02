@@ -6,8 +6,8 @@
 // 获取用户信息
 export const account = state => {
     if (state.userInfo.id) {
-        return state.userInfo
+        return state.userInfo;
     }
-    return {}
-}
+    return {};
+};
 
