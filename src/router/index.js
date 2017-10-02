@@ -7,7 +7,7 @@ import store from '../store';
 // views
 import Index from '../index.vue';
 import Main from '../view/Main.vue';
-
+import Sick from '../view/sick/sick.vue';
 Vue.use(Router);
 
 let router = new Router({
@@ -21,6 +21,20 @@ let router = new Router({
                     path: '/',
                     name: 'vv-main',
                     component: Main,
+                    meta: {
+                        canEnter: true
+                    }
+                }
+            ]
+        },
+        {
+            path: '/我想问问你/你到底是不是个神经病',
+            component: Index,
+            children: [
+                {
+                    path: '/',
+                    name: 'sick',
+                    component: Sick,
                     meta: {
                         canEnter: true
                     }
