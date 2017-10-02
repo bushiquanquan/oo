@@ -83,7 +83,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.BannerPlugin('版权所有，翻版必究'),
+        new webpack.BannerPlugin('版权大家滴，翻版木有事情'),
         new webpack.ProgressPlugin(),
         new CopyWebpackPlugin([{
             from: resolve('statics'),

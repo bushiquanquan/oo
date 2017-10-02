@@ -34,7 +34,8 @@ switch (branchName) {
 };
 
 // public path
-let publicPath = `//www.quanquan.net/${group}/${projectName}/`;
+// let publicPath = `//www.quanquan.net/${group}/${projectName}/`;
+let publicPath = './'
 
 function cssLoaders(options) {
     options = options || {};

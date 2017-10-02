@@ -11,9 +11,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const baseConfig = require('./base.conf');
 const utils = require('./utils');
-const rm = require('rimraf')
+const rm = require('rimraf');
 // remove dist folder in web app mode
-console.log(rm);
 rm.sync('build/*');
 let htmlPlugins = [],
     pages = utils.getMultiEntry('./src/**/index.entry.html');
