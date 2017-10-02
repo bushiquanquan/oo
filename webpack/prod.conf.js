@@ -11,9 +11,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const baseConfig = require('./base.conf');
 const utils = require('./utils');
-
+const rm = require('rimraf')
+// remove dist folder in web app mode
+console.log(rm);
+rm.sync('build/*');
 let htmlPlugins = [],
-    pages = utils.getMultiEntry('./src/pages/**/index.entry.pug');
+    pages = utils.getMultiEntry('./src/**/index.entry.html');
 
 for (let pathname in pages) {
     // 配置生成的 html 文件， 定义路径等
@@ -59,13 +62,6 @@ module.exports = webpackMerge(baseConfig, {
         chunkFilename: '[id].[chunkhash].js'
     },
     plugins: [
-        //uglify js
-        // new webpack.optimize.UglifyJsPlugin({
-        //     compress: {
-        //         warnings: false
-        //     },
-        //     sourceMap: false
-        // }),
         new UglifyJSPlugin({
             parallel: {
                 cache: true,
