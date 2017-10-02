@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <link rel="icon" type="image/png" href="statics/favicon.ico" sizes="32x32">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script>
@@ -20,24 +21,24 @@
     </script>
 </head>
 <body>
-    <div id="app" class="main">
-        <router-view></router-view>
-    </div>
-    <% if (process.env.NODE_ENV === 'production') { %>
-    <script>
-        /* performance */
-        console.log('production');
-    </script>
-    <% } %>
-    <script>var createjs = window;</script>
-    <script type="text/javascript" src="statics/libs/libs.min.js"></script>
-    <script type="text/javascript" src="statics/libs/tweenjs-0.6.0.min.js"></script>
-    <script type="text/javascript" src="statics/libs/soundjs-0.6.1.min.js"></script>
-    <script type="text/javascript" src="statics/libs/Point3d.js"></script>
-    <script type="text/javascript" src="statics/libs/Polygon.js"></script>
-    <script type="text/javascript" src="statics/libs/Util.js"></script>
-    <script type='text/javascript' src='statics/libs/SoundManager.js'></script>
-    <script type="text/javascript" src="statics/libs/Config.js"></script>
-    <script type="text/javascript" src="statics/libs/Piece.js"></script>
+<div id="app" class="main">
+    <router-view></router-view>
+</div>
+<% if (process.env.NODE_ENV === 'production') { %>
+<script>
+    /* performance */
+    console.log('production');
+</script>
+<% } %>
+<script>var createjs = window;</script>
+<script type="text/javascript" src="statics/libs/libs.min.js"></script>
+<script type="text/javascript" src="statics/libs/tweenjs-0.6.0.min.js"></script>
+<script type="text/javascript" src="statics/libs/soundjs-0.6.1.min.js"></script>
+<script type="text/javascript" src="statics/libs/Point3d.js"></script>
+<script type="text/javascript" src="statics/libs/Polygon.js"></script>
+<script type="text/javascript" src="statics/libs/Util.js"></script>
+<script type='text/javascript' src='statics/libs/SoundManager.js'></script>
+<script type="text/javascript" src="statics/libs/Config.js"></script>
+<script type="text/javascript" src="statics/libs/Piece.js"></script>
 </body>
 </html>
