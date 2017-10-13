@@ -1,5 +1,10 @@
 /**
- * @file check-versions 检查npm 、node等版本是否符合
+ * @file check-versions 检查npm 、node等版本是否符合.其实可以不进行检查
+ * package.json 中可以配置相关信息
+ * "engines": {
+		"node": ">= 7.0.0",
+		"npm": ">= 3.0.0"
+	},
  * @author yuanhuihui  2017/10/1
  */
 const chalk = require('chalk'); // 打印上色
