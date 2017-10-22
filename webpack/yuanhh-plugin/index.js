@@ -16,9 +16,8 @@ YUANHHPlugin.prototype.apply = function(compiler){
         // compilation和下一个回调函数，callback可以不传
         // 同步事件不传callback
         compilation.chunks.forEach(function(chunk){
-            console.log('\nchunk.name', chunk.name);
+            console.log('\nchunk.name', chunk.name, 'chunk.modules', chunk.modules.length);
             console.log('=====================================');
-            console.log('chunk.modules', chunk.modules.length);
             // console.log('chunk.modules', chunk.getNumberOfModules());
 
             // Explore each module within the chunk (built inputs):
@@ -26,8 +25,8 @@ YUANHHPlugin.prototype.apply = function(compiler){
                 console.log('================module', module.resource);
                 // Explore each source file path that was included into the module:
                 if (Array.isArray(module.fileDependencies)) {
-                    module.fileDependencies.forEach(function(filepath){
-                        console.log('========fileDependencies', filepath);
+                    module.fileDependencies.forEach(function(filepath, index){
+                        index !==0 && console.log('========fileDependencies', filepath);
                     });
                 }
             });

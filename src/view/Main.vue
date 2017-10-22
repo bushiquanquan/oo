@@ -2,6 +2,7 @@
     <div class="main">
         {{test}}
         <p>world</p>
+        <img src="statics/favicon.ico">
     </div>
 </template>
 <style rel="stylesheet/css" lang="scss" scoped>
