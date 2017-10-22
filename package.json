@@ -9,7 +9,7 @@
     "eslint:fix": "node_modules/.bin/eslint src/**/** --fix",
     "server": "cross-env NODE_ENV=development webpack-dev-server --config webpack/dev.conf.js",
     "build": "cross-env NODE_ENV=prod webpack --config webpack/prod.conf.js",
-    "start:qa": "cross-env APP_ENV=qa npm run server"
+    "start": "cross-env APP_ENV=qa npm run server"
   },
   "license": "MIT",
   "dependencies": {

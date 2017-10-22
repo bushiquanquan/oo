@@ -28,7 +28,7 @@ let router = new Router({
             ]
         },
         {
-            path: '/我想问问你/你到底是不是个神经病',
+            path: '/sick',
             component: Index,
             children: [
                 {

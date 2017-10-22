@@ -5,7 +5,9 @@
 const HappyPack = require('happypack');
 const os = require('os');
 const happyThreadPool = HappyPack.ThreadPool({size: os.cpus().length});
-const vueLoaderConfig = require('./vue-loader-conf');
+const utils = require('./utils');
+let isProduction = utils.NODE_ENV === 'prod';
+
 // 设置happyPack冗长的打印日志是否显示
 const verbose = false;
 let happyPlugins = [
@@ -28,7 +30,24 @@ let happyPlugins = [
         loaders: [{
             path: 'vue-loader',
             query: {
-                options: vueLoaderConfig
+                options: {
+                    loaders: utils.cssLoaders({
+                        sourceMap: !isProduction,
+                        extract: isProduction
+                    }),
+                    transformToRequire: {
+                        video: 'src',
+                        source: 'src',
+                        img: 'src',
+                        image: 'xlink:href'
+                    }
+                }
+            }
+        }, {
+            path: 'vue-html-template-loader',  // 自定义的loader
+            query: {
+                options: {
+                }
             }
         }],
         threadPool: happyThreadPool

@@ -8,6 +8,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const utils = require('./utils');
 const happy = require('./happypack.conf');
+const myPlugin = require('./yuanhh-plugin');
 
 let pageJs = utils.getMultiEntry('./src/**/index.entry.js');
 let commonjs = Object.keys(pageJs).map(function (item) {
@@ -43,7 +44,7 @@ module.exports = {
     module: {
         rules: [
             {
-                // 未知在第一个，否则已经被下面的loader处理了；
+                // 位置在第一个，否则已经被下面的loader处理了；
                 test: /\.(js|vue)$/,
                 loader: utils.addHappyLoader('eslint-loader'),
                 enforce: 'pre', // 确保检查的是源文件
@@ -93,6 +94,7 @@ module.exports = {
             'APP_ENV': JSON.stringify(utils.APP_ENV),
             'NODE_ENV': JSON.stringify(utils.NODE_ENV),
             'FE_VERSION': JSON.stringify(utils.FE_VERSION)
-        })
+        }),
+        new  myPlugin()
     ].concat(commonjs, happy.happyPlugins)
 };
