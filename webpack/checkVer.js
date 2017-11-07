@@ -26,11 +26,13 @@ let versionRequirements = [
 ];
 
 if (shell.which('npm')) {  // npm 是否安装
-    versionRequirements.push({
+    let npm = {
         name: 'npm',
         currentVersion: exec('npm --version'),
         versionRequirement: packageConfig.engines.npm
-    })
+    };
+    versionRequirements.push(npm)
+    console.log(chalk.green('npm version is ' + npm.currentVersion));
 }
 
 module.exports = function () {

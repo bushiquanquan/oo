@@ -9,7 +9,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const utils = require('./utils');
 let baseConfig = require('./base.conf');
-
+// 图表展示打包文件的依赖来源和大小
+const Visualizer = require('webpack-visualizer-plugin');
 let htmlPlugins = [],
     pages = utils.getMultiEntry('./src/**/index.entry.html');
 
@@ -53,9 +54,9 @@ module.exports = function () {
             disableHostCheck: true
         },
         plugins: [
-            new webpack.HotModuleReplacementPlugin(),
             new webpack.NoEmitOnErrorsPlugin(),
-            new FriendlyErrorsPlugin()
+            new FriendlyErrorsPlugin(),
+            new Visualizer()
         ].concat(htmlPlugins)
     });
 };

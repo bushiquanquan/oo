@@ -2,7 +2,7 @@
  * @file base.conf https://webpack.js.org/configuration/dev-server/
  * @author yuanhuihui  2017/9/30
  */
-require('./check-versions')();
+require('./checkVer')();
 const webpack = require('webpack');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');

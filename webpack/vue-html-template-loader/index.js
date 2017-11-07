@@ -15,5 +15,8 @@ module.exports = function(source, other){
     // return 'module.exports = ' + template;
     // 当一个 Loader 无依赖，可异步的时候我想都应该让它不再阻塞地去异步
     var callback = this.async();
+    console.log('=====loader begin====');
+    console.log(source.substring(0, 40));
+    console.log('=====loader end====');
     callback(null, source, other);
 };
