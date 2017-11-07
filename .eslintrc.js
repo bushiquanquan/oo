@@ -87,7 +87,7 @@ module.exports = {
         "no-implicit-coercion": 2,
         "no-implicit-globals": 2,
         "no-implied-eval": 2,
-        "no-invalid-this": 2,
+        "no-invalid-this": 0, // 无效this
         "no-iterator": 2,
         "no-labels": 2,
         "no-lone-blocks": 2,
@@ -164,7 +164,7 @@ module.exports = {
         "operator-linebreak": [2, "after", { "overrides": { "?": "before", ":": "before" } }],
         "padded-blocks": [2, "never"],
         "quotes": [2, "single", "avoid-escape"],
-        "semi": [2, "always"],
+        "semi": [0, "always"], // 加分号
         "semi-spacing": [2, { "before": false, "after": true }],
         "space-before-blocks": [2, "always"],
         "space-before-function-paren": [2, "always"],

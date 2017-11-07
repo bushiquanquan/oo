@@ -8,6 +8,8 @@ import store from '../store';
 import Index from '../index.vue';
 import Main from '../view/Main.vue';
 import Sick from '../view/sick/sick.vue';
+import VueComp from '../view/vue-class/vuComp.vue';
+
 Vue.use(Router);
 
 let router = new Router({
@@ -35,6 +37,20 @@ let router = new Router({
                     path: '/',
                     name: 'sick',
                     component: Sick,
+                    meta: {
+                        canEnter: true
+                    }
+                }
+            ]
+        },
+        {
+            path: '/demo',
+            component: Index,
+            children: [
+                {
+                    path: '/',
+                    name: 'vueComp',
+                    component: VueComp,
                     meta: {
                         canEnter: true
                     }
