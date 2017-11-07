@@ -11,7 +11,12 @@
 
 <script>
     import Vue from 'vue';
-    // https://www.npmjs.com/package/vue-class-component
+    /** https://www.npmjs.com/package/vue-class-component
+     * 1 methods，钩子都可以直接写作class的方法
+     * 2 computed属性可以直接通过get来获得
+     * 3 初始化data可以声明为class的属性
+     * 4 其他的都可以放到Component装饰器里
+     */
     import Component from 'vue-class-component'
 
     @Component({
